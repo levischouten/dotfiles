@@ -32,17 +32,3 @@ end
 
 _fnm_autoload_hook
 
-set -gx FZF_DEFAULT_OPTS '
-    --color=bg:-1,fg:-1,bg+:8,fg+:-1,hl:4,hl+:4,border:7,prompt:7,info:7,spinner:7,marker:7,pointer:7
-    --border=rounded
-    --no-bold
-    --pointer=" "
-'
-
-function gitui
-  if defaults read -g AppleInterfaceStyle >/dev/null 2>&1
-    command gitui -t ~/.config/gitui/themes/github-dark.ron $argv
-  else
-    command gitui -t ~/.config/gitui/themes/github-light.ron $argv
-  end
-end

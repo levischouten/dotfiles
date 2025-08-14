@@ -9,7 +9,7 @@ return {
 					border = "rounded",
 				},
 				grep = {
-					rg_opts = "--column --line-number --no-heading --color=always --smart-case --fixed-strings",
+					no_header_i = true,
 				},
 			})
 		end,

@@ -4,14 +4,17 @@ local plugins = {}
 local plugin_files = {
 	"themes",
 	"lualine",
-	"nvim-tree",
+    "starter",
+	"neo-tree",
+	"ibl",
 	"fzf-lua",
 	"treesitter",
 	"formatting",
 	"completion",
 	"autopairs",
 	"snacks",
-    "multicursors",
+	"multicursors",
+	"nvim-ufo",
 	"_misc",
 }
 

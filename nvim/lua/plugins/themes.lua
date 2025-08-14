@@ -22,7 +22,7 @@ return {
 		lazy = false,
 		priority = 1000,
 		init = function()
-			vim.g.sonokai_style = "maia"
+			vim.g.sonokai_style = "default"
 			vim.g.sonokai_transparent_background = 2
 			vim.g.sonokai_better_performance = 1
 			vim.g.sonokai_enable_italic = 1
