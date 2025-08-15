@@ -4,7 +4,7 @@ local plugins = {}
 local plugin_files = {
 	"themes",
 	"lualine",
-    "starter",
+	"starter",
 	"neo-tree",
 	"ibl",
 	"fzf-lua",
