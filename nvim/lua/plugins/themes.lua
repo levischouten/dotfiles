@@ -1,49 +1,41 @@
 return {
 	{
-		"projekt0n/github-nvim-theme",
-		name = "github-theme",
+		"catppuccin/nvim",
+		name = "catppuccin",
 		lazy = false,
 		priority = 1000,
-		config = function()
-			require("github-theme").setup({
-				options = {
-					transparent = true,
-					terminal_colors = true,
-					darken = {
-						sidebars = { enable = true, list = { "NvimTree" } },
-					},
-				},
-			})
-		end,
-	},
-
-	{
-		"sainnhe/sonokai",
-		lazy = false,
-		priority = 1000,
-		init = function()
-			vim.g.sonokai_style = "default"
-			vim.g.sonokai_transparent_background = 2
-			vim.g.sonokai_better_performance = 1
-			vim.g.sonokai_enable_italic = 1
-		end,
-		config = function()
-			vim.o.background = "dark"
-			vim.cmd.colorscheme("sonokai")
-		end,
+		opts = {
+			transparent_background = true,
+			show_end_of_buffer = false,
+			integrations = {
+				treesitter = true,
+				native_lsp = { enabled = true },
+				cmp = true,
+				gitsigns = true,
+				which_key = true,
+				noice = true,
+				mason = true,
+				fzf = true,
+				neotree = true,
+			},
+		},
 	},
 
 	{
 		"f-person/auto-dark-mode.nvim",
 		config = function()
 			local function apply_theme_overrides()
-				vim.api.nvim_set_hl(0, "NormalFloat", { link = "Normal" })
+				vim.api.nvim_set_hl(0, "FzfLuaNormal", { bg = "NONE" })
+				vim.api.nvim_set_hl(0, "FzfLuaBorder", { bg = "NONE" })
+				vim.api.nvim_set_hl(0, "FzfLuaPreviewNormal", { bg = "NONE" })
+				vim.api.nvim_set_hl(0, "FzfLuaPreviewBorder", { bg = "NONE" })
+				-- vim.api.nvim_set_hl(0, "NormalFloat", { link = "Normal" })
 
 				if vim.o.background == "dark" then
 					-- dark mode
 				else
 					-- light mode
-					vim.api.nvim_set_hl(0, "WinSeparator", { fg = "#ebebeb", bg = "NONE" })
+					-- vim.api.nvim_set_hl(0, "WinSeparator", { fg = "#ebebeb", bg = "NONE" })
 				end
 			end
 
@@ -56,12 +48,12 @@ return {
 			adm.setup({
 				set_dark_mode = function()
 					vim.o.background = "dark"
-					vim.cmd.colorscheme("sonokai")
+					vim.cmd.colorscheme("catppuccin-mocha")
 					vim.schedule(apply_theme_overrides)
 				end,
 				set_light_mode = function()
 					vim.o.background = "light"
-					vim.cmd.colorscheme("github_light")
+					vim.cmd.colorscheme("catppuccin-latte")
 					vim.schedule(apply_theme_overrides)
 				end,
 			})

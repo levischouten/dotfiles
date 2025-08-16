@@ -21,7 +21,7 @@ return {
 		end,
 	},
 
-	-- { "christoomey/vim-tmux-navigator", lazy = false },
+	{ "christoomey/vim-tmux-navigator", lazy = false },
 
 	-- LSP
 	{ "neovim/nvim-lspconfig" },

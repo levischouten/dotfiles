@@ -3,6 +3,7 @@ set -g fish_greeting
 fish_add_path /opt/homebrew/bin
 fish_add_path (go env GOPATH)/bin
 fish_add_path ~/bin
+fish_add_path ~/.local/bin
 
 # Editor
 set -Ux EDITOR nvim
