@@ -10,6 +10,11 @@ return {
 				},
 				grep = {
 					no_header_i = true,
+					no_header = true,
+				},
+				grep_curbuf = {
+					no_header_i = true,
+					no_header = true,
 				},
 			})
 		end,

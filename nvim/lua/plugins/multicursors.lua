@@ -1,13 +1,15 @@
 return {
 	{
-		"smoka7/multicursors.nvim",
-		dependencies = { "nvimtools/hydra.nvim" },
-		opts = {
-			hint_config = { position = "bottom-right", float_opts = { border = "rounded" } },
-			-- generate_hints = { normal = true, insert = true, extend = true },
-		},
-		keys = {
-			{ "<leader>m", "<cmd>MCstart<cr>", mode = { "v" }, desc = "MultiCursor: start" },
-		},
+		"mg979/vim-visual-multi",
+		branch = "master",
+		init = function()
+			vim.g.VM_default_mappings = 0
+			vim.g.VM_maps = {
+				["Find Under"] = "<leader>m",
+				["Select All"] = "<leader>M",
+				["Add Cursor Down"] = "<M-j>",
+				["Add Cursor Up"] = "<M-k>",
+			}
+		end,
 	},
 }

@@ -13,7 +13,6 @@ local plugin_files = {
 	"completion",
 	"autopairs",
 	"snacks",
-	"multicursors",
 	"nvim-ufo",
 	"_misc",
 }
