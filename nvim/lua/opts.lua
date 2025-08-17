@@ -9,9 +9,6 @@ o.updatetime = 200
 o.clipboard = "unnamedplus"
 o.wrap = false
 
-o.timeoutlen = 300
-o.timeout = true
-
 o.tabstop = 4
 o.shiftwidth = 4
 o.expandtab = true

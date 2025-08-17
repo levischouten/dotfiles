@@ -1,4 +1,5 @@
- theme = dark:catppuccin-macchiato,light:catppuccin-latte
+# theme = dark:nordfox,light:dayfox
+theme = catppuccin-frappe
 
 font-family = Berkeley Mono
 font-size = 13
