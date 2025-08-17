@@ -7,7 +7,7 @@ return {
 		opts = {
 			open_fold_hl_timeout = 0,
 			-- prefer LSP if available; otherwise Treesitter -> indent
-			provider_selector = function(_, filetype, _)
+			provider_selector = function()
 				return { "treesitter", "indent" }
 			end,
 		},

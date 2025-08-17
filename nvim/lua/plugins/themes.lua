@@ -25,11 +25,15 @@ return {
 		"f-person/auto-dark-mode.nvim",
 		config = function()
 			local function apply_theme_overrides()
+				-- Fzf-lua
 				vim.api.nvim_set_hl(0, "FzfLuaNormal", { bg = "NONE" })
 				vim.api.nvim_set_hl(0, "FzfLuaBorder", { bg = "NONE" })
 				vim.api.nvim_set_hl(0, "FzfLuaPreviewNormal", { bg = "NONE" })
 				vim.api.nvim_set_hl(0, "FzfLuaPreviewBorder", { bg = "NONE" })
-				-- vim.api.nvim_set_hl(0, "NormalFloat", { link = "Normal" })
+
+				-- Lazygit / floating terminal background
+				vim.api.nvim_set_hl(0, "NormalFloat", { bg = "NONE" })
+				vim.api.nvim_set_hl(0, "FloatBorder", { bg = "NONE" })
 
 				if vim.o.background == "dark" then
 					-- dark mode

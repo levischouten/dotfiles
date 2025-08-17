@@ -33,3 +33,16 @@ end
 
 _fnm_autoload_hook
 
+set -eg FZF_DEFAULT_OPTS
+set -eU FZF_DEFAULT_OPTS
+# set -Ux FZF_DEFAULT_OPTS "\
+# --color=bg+:#363A4F,bg:#24273A,spinner:#F4DBD6,hl:#ED8796 \
+# --color=fg:#CAD3F5,header:#ED8796,info:#C6A0F6,pointer:#F4DBD6 \
+# --color=marker:#B7BDF8,fg+:#CAD3F5,prompt:#C6A0F6,hl+:#ED8796 \
+# --color=selected-bg:#494D64 \
+# --color=border:#6E738D,label:#CAD3F5"
+set -Ux FZF_DEFAULT_OPTS "\
+--color=bg:-1,bg+:0,fg:15,fg+:15 \
+--color=hl:4,hl+:1,info:13,prompt:13,spinner:5,marker:4,pointer:3,header:1 \
+--color=border:8,label:15,selected-bg:8 \
+--border=rounded"

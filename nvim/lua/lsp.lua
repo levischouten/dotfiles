@@ -1,4 +1,5 @@
 local lspconfig = require("lspconfig")
+
 -- diagnostics look tidy
 vim.diagnostic.config({
 	virtual_text = { spacing = 2, prefix = " " },
@@ -14,7 +15,10 @@ local on_attach = function(_, bufnr)
 	end
 	map("n", "gd", vim.lsp.buf.definition)
 	map("n", "gr", "<cmd>lua require('fzf-lua').lsp_references()<CR>")
-	map("n", "K", vim.lsp.buf.hover)
+	-- map("n", "K", vim.lsp.buf.hover )
+	map("n", "K", function()
+		vim.lsp.buf.hover({ border = "rounded" })
+	end)
 	map("n", "<leader>r", vim.lsp.buf.rename)
 
 	require("fzf-lua").register_ui_select()

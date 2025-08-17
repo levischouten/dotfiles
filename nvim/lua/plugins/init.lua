@@ -6,7 +6,6 @@ local plugin_files = {
 	"lualine",
 	"starter",
 	"neo-tree",
-	"ibl",
 	"fzf-lua",
 	"treesitter",
 	"formatting",
