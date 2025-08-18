@@ -3,10 +3,10 @@ vim.g.mapleader = " "
 local map = vim.keymap.set
 
 -- basic navigation between splits
-map("n", "<C-h>", "<C-w>h")
-map("n", "<C-j>", "<C-w>j")
-map("n", "<C-k>", "<C-w>k")
-map("n", "<C-l>", "<C-w>l")
+-- map("n", "<C-h>", "<C-w>h")
+-- map("n", "<C-j>", "<C-w>j")
+-- map("n", "<C-k>", "<C-w>k")
+-- map("n", "<C-l>", "<C-w>l")
 
 -- quick splits
 map("n", "<leader>v", ":vsplit<CR>")
@@ -27,7 +27,9 @@ end)
 map("n", "<leader>b", function()
 	require("fzf-lua").grep_curbuf()
 end)
-
+map("n", "<leader>B", function()
+	require("fzf-lua").buffers()
+end)
 -- Disable Shift+J from joining lines
 vim.keymap.set("n", "J", "<Nop>", { noremap = true, silent = true })
 vim.keymap.set("v", "J", "<Nop>", { noremap = true, silent = true })

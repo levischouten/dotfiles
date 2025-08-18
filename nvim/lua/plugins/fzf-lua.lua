@@ -16,6 +16,10 @@ return {
 					no_header_i = true,
 					no_header = true,
 				},
+				buffers = {
+					no_header_i = true,
+					no_header = true,
+				},
 			})
 		end,
 	},

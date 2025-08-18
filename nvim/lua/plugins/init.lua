@@ -2,11 +2,8 @@ local plugins = {}
 
 -- Load all plugin files
 local plugin_files = {
-	"themes",
 	"lualine",
-	"starter",
 	"neo-tree",
-	"outline",
 	"fzf-lua",
 	"treesitter",
 	"formatting",
@@ -14,7 +11,11 @@ local plugin_files = {
 	"autopairs",
 	"snacks",
 	"nvim-ufo",
+	"context",
+	"multicursors",
+	"smart-splits",
 	"_misc",
+	"themes",
 }
 
 for _, file in ipairs(plugin_files) do
