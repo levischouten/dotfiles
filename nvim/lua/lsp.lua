@@ -15,21 +15,18 @@ local on_attach = function(_, bufnr)
 	end
 	map("n", "gd", vim.lsp.buf.definition)
 	map("n", "gr", "<cmd>lua require('fzf-lua').lsp_references()<CR>")
-	-- map("n", "K", vim.lsp.buf.hover )
 	map("n", "K", function()
 		vim.lsp.buf.hover({ border = "rounded" })
 	end)
 	map("n", "<leader>r", vim.lsp.buf.rename)
 
-	require("fzf-lua").register_ui_select()
+	map("n", "<leader>c", function()
+		require("fzf-lua").lsp_code_actions()
+	end)
 
 	-- Diagnostics pickers (fzf-lua)
 	map("n", "<leader>d", function()
 		require("fzf-lua").diagnostics_document()
-	end)
-
-	map("n", "<leader>c", function()
-		require("fzf-lua").lsp_code_actions()
 	end)
 end
 

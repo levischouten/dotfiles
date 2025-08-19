@@ -58,11 +58,9 @@ keybinds clear-defaults=true {
         bind "down" { MoveFocus "down"; }
         bind "up" { MoveFocus "up"; }
         bind "right" { MoveFocus "right"; }
-        bind "c" { SwitchToMode "renamepane"; PaneNameInput 0; }
+        bind "r" { SwitchToMode "renamepane"; PaneNameInput 0; }
         bind "s" { NewPane "down"; SwitchToMode "normal"; }
-        bind "w" { NewPane "right"; SwitchToMode "normal"; }
-        bind "e" { TogglePaneEmbedOrFloating; SwitchToMode "normal"; }
-        bind "f" { ToggleFocusFullscreen; SwitchToMode "normal"; }
+        bind "v" { NewPane "right"; SwitchToMode "normal"; }
         bind "h" { MoveFocus "left"; }
         bind "i" { TogglePanePinned; SwitchToMode "normal"; }
         bind "j" { MoveFocus "down"; }
@@ -71,8 +69,6 @@ keybinds clear-defaults=true {
         bind "n" { NewPane; SwitchToMode "normal"; }
         bind "p" { SwitchFocus; }
         bind "Ctrl p" { SwitchToMode "normal"; }
-        bind "w" { ToggleFloatingPanes; SwitchToMode "normal"; }
-        bind "z" { TogglePaneFrames; SwitchToMode "normal"; }
     }
     tab {
         bind "left" { GoToPreviousTab; }
@@ -224,27 +220,27 @@ keybinds clear-defaults=true {
     shared_among "session" "tmux" {
         bind "d" { Detach; }
     }
-    tmux {
-        bind "left" { MoveFocus "left"; SwitchToMode "normal"; }
-        bind "down" { MoveFocus "down"; SwitchToMode "normal"; }
-        bind "up" { MoveFocus "up"; SwitchToMode "normal"; }
-        bind "right" { MoveFocus "right"; SwitchToMode "normal"; }
-        bind "space" { NextSwapLayout; }
-        bind "\"" { NewPane "down"; SwitchToMode "normal"; }
-        bind "%" { NewPane "right"; SwitchToMode "normal"; }
-        bind "," { SwitchToMode "renametab"; }
-        bind "[" { SwitchToMode "scroll"; }
-        bind "Ctrl b" { Write 2; SwitchToMode "normal"; }
-        bind "c" { NewTab; SwitchToMode "normal"; }
-        bind "h" { MoveFocus "left"; SwitchToMode "normal"; }
-        bind "j" { MoveFocus "down"; SwitchToMode "normal"; }
-        bind "k" { MoveFocus "up"; SwitchToMode "normal"; }
-        bind "l" { MoveFocus "right"; SwitchToMode "normal"; }
-        bind "n" { GoToNextTab; SwitchToMode "normal"; }
-        bind "o" { FocusNextPane; }
-        bind "p" { GoToPreviousTab; SwitchToMode "normal"; }
-        bind "z" { ToggleFocusFullscreen; SwitchToMode "normal"; }
-    }
+    // tmux {
+    //     bind "left" { MoveFocus "left"; SwitchToMode "normal"; }
+    //     bind "down" { MoveFocus "down"; SwitchToMode "normal"; }
+    //     bind "up" { MoveFocus "up"; SwitchToMode "normal"; }
+    //     bind "right" { MoveFocus "right"; SwitchToMode "normal"; }
+    //     bind "space" { NextSwapLayout; }
+    //     bind "\"" { NewPane "down"; SwitchToMode "normal"; }
+    //     bind "%" { NewPane "right"; SwitchToMode "normal"; }
+    //     bind "," { SwitchToMode "renametab"; }
+    //     bind "[" { SwitchToMode "scroll"; }
+    //     bind "Ctrl b" { Write 2; SwitchToMode "normal"; }
+    //     bind "c" { NewTab; SwitchToMode "normal"; }
+    //     bind "h" { MoveFocus "left"; SwitchToMode "normal"; }
+    //     bind "j" { MoveFocus "down"; SwitchToMode "normal"; }
+    //     bind "k" { MoveFocus "up"; SwitchToMode "normal"; }
+    //     bind "l" { MoveFocus "right"; SwitchToMode "normal"; }
+    //     bind "n" { GoToNextTab; SwitchToMode "normal"; }
+    //     bind "o" { FocusNextPane; }
+    //     bind "p" { GoToPreviousTab; SwitchToMode "normal"; }
+    //     bind "z" { ToggleFocusFullscreen; SwitchToMode "normal"; }
+    // }
 }
 
 // Plugin aliases - can be used to change the implementation of Zellij
