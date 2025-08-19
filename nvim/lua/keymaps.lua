@@ -2,12 +2,6 @@ vim.g.mapleader = " "
 
 local map = vim.keymap.set
 
--- basic navigation between splits
--- map("n", "<C-h>", "<C-w>h")
--- map("n", "<C-j>", "<C-w>j")
--- map("n", "<C-k>", "<C-w>k")
--- map("n", "<C-l>", "<C-w>l")
-
 -- quick splits
 map("n", "<leader>v", ":vsplit<CR>")
 map("n", "<leader>s", ":split<CR>")

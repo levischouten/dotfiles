@@ -59,7 +59,8 @@ keybinds clear-defaults=true {
         bind "up" { MoveFocus "up"; }
         bind "right" { MoveFocus "right"; }
         bind "c" { SwitchToMode "renamepane"; PaneNameInput 0; }
-        bind "d" { NewPane "down"; SwitchToMode "normal"; }
+        bind "s" { NewPane "down"; SwitchToMode "normal"; }
+        bind "w" { NewPane "right"; SwitchToMode "normal"; }
         bind "e" { TogglePaneEmbedOrFloating; SwitchToMode "normal"; }
         bind "f" { ToggleFocusFullscreen; SwitchToMode "normal"; }
         bind "h" { MoveFocus "left"; }
@@ -70,8 +71,6 @@ keybinds clear-defaults=true {
         bind "n" { NewPane; SwitchToMode "normal"; }
         bind "p" { SwitchFocus; }
         bind "Ctrl p" { SwitchToMode "normal"; }
-        bind "r" { NewPane "right"; SwitchToMode "normal"; }
-        bind "s" { NewPane "stacked"; SwitchToMode "normal"; }
         bind "w" { ToggleFloatingPanes; SwitchToMode "normal"; }
         bind "z" { TogglePaneFrames; SwitchToMode "normal"; }
     }
@@ -103,24 +102,6 @@ keybinds clear-defaults=true {
         bind "x" { CloseTab; SwitchToMode "normal"; }
         bind "tab" { ToggleTab; }
     }
-    // resize {
-    //     bind "left" { Resize "Increase left"; }
-    //     bind "down" { Resize "Increase down"; }
-    //     bind "up" { Resize "Increase up"; }
-    //     bind "right" { Resize "Increase right"; }
-    //     bind "+" { Resize "Increase"; }
-    //     bind "-" { Resize "Decrease"; }
-    //     bind "=" { Resize "Increase"; }
-    //     bind "H" { Resize "Decrease left"; }
-    //     bind "J" { Resize "Decrease down"; }
-    //     bind "K" { Resize "Decrease up"; }
-    //     bind "L" { Resize "Decrease right"; }
-    //     bind "h" { Resize "Increase left"; }
-    //     bind "j" { Resize "Increase down"; }
-    //     bind "k" { Resize "Increase up"; }
-    //     bind "l" { Resize "Increase right"; }
-    //     bind "Ctrl n" { SwitchToMode "normal"; }
-    // }
     move {
         bind "left" { MovePane "left"; }
         bind "down" { MovePane "down"; }
@@ -189,9 +170,6 @@ keybinds clear-defaults=true {
     }
     shared_except "locked" "scroll" "search" "tmux" {
         bind "Ctrl b" { SwitchToMode "tmux"; }
-    }
-    shared_except "locked" "scroll" "search" {
-        bind "Ctrl s" { SwitchToMode "scroll"; }
     }
     shared_except "locked" "tab" {
         bind "Ctrl t" { SwitchToMode "tab"; }
@@ -308,7 +286,12 @@ simplified_ui true
 // Choose the theme that is specified in the themes section.
 // Default: default
 // 
-theme "ansi"
+theme "personal"
+// ui {
+//     pane_frames {
+//         rounded_corners true
+//     }
+// }
  
 // Choose the base input mode of zellij.
 // Default: normal
@@ -354,7 +337,7 @@ default_layout "compact"
 //   - false
 // 
 pane_frames false
- 
+
 // When attaching to an existing session with other users,
 // should the session be mirrored (true)
 // or should each user have their own cursor (false)
