@@ -28,6 +28,8 @@ local on_attach = function(_, bufnr)
 	map("n", "<leader>d", function()
 		require("fzf-lua").diagnostics_document()
 	end)
+
+	require("fzf-lua").register_ui_select()
 end
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
@@ -98,8 +100,16 @@ lspconfig.clangd.setup({
 	},
 })
 
--- (optional) CMake files
+-- CMake files
 lspconfig.cmake.setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
+})
+
+-- Markdown
+lspconfig.marksman.setup({
+	on_attach = on_attach,
+	capabilities = capabilities,
+	-- filetypes = { "markdown" },
+	-- root_dir = util.root_pattern(".git", ".marksman.toml", "marksman.toml", "README.md"),
 })

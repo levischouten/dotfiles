@@ -1,37 +1,41 @@
 return {
 	{
-		"catppuccin/nvim",
-		name = "catppuccin",
+		dir = "~/Developer/private/otherhalf",
+		name = "otherhalf",
 		priority = 1000,
+		lazy = false,
 		config = function()
-			require("catppuccin").setup({
-				transparent_background = true,
-				float = {
-					transparent = true,
-					solid = false,
-				},
+			-- Try to detect terminal background
+			local function detect_background()
+				local handle = io.popen('defaults read -g AppleInterfaceStyle 2>/dev/null')
+				if handle then
+					local result = handle:read("*a")
+					handle:close()
+					if result and result:match("Dark") then
+						vim.o.background = "dark"
+					else
+						vim.o.background = "light"
+					end
+				end
+			end
+			
+			detect_background()
+			
+			require("otherhalf").setup({
+				transparent = true,
+				variant = "auto", -- Automatically detects light/dark mode
 			})
-
-			-- FZF Lua
-			vim.api.nvim_set_hl(0, "FzfLuaNormal", { bg = "NONE" })
-			vim.api.nvim_set_hl(0, "FzfLuaBorder", { bg = "NONE" })
-			vim.api.nvim_set_hl(0, "FzfLuaPreviewNormal", { bg = "NONE" })
-			vim.api.nvim_set_hl(0, "FzfLuaPreviewBorder", { bg = "NONE" })
-
-			-- Lazygit / floating terminal background
-			vim.api.nvim_set_hl(0, "NormalFloat", { bg = "NONE" })
-			vim.api.nvim_set_hl(0, "FloatBorder", { bg = "NONE" })
-
-			-- UFO Code Folding TODO: FIX
-			vim.api.nvim_set_hl(0, "UfoFoldedBg", { bg = "NONE" })
-			vim.api.nvim_set_hl(0, "Folded", { bg = "NONE" })
-			vim.api.nvim_set_hl(0, "UfoFoldedEllipsis", { bg = "NONE", fg = "NONE" })
 
 			-- MultiCursor
 			vim.api.nvim_set_hl(0, "MultiCursor", { link = "Visual" })
 			vim.api.nvim_set_hl(0, "MultiCursorMain", { link = "Visual" })
 
-			vim.cmd.colorscheme("catppuccin-frappe")
+			vim.cmd.colorscheme("otherhalf")
+			
+			-- Add toggle command
+			vim.api.nvim_create_user_command("ToggleTheme", function()
+				require("otherhalf").toggle()
+			end, { desc = "Toggle between light and dark theme" })
 		end,
 	},
 }

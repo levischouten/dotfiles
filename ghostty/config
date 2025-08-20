@@ -1,4 +1,4 @@
-theme = catppuccin-frappe
+# theme = OneHalfDark
 
 font-family = Berkeley Mono
 font-size = 13
@@ -12,3 +12,4 @@ macos-option-as-alt = true
 macos-titlebar-proxy-icon = hidden
 
 cursor-text = #24273A
+# custom-shader = "./shaders/cursor_smear.glsl"

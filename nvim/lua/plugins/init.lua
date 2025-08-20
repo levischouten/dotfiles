@@ -2,9 +2,10 @@ local plugins = {}
 
 -- Load all plugin files
 local plugin_files = {
+	"fzf-lua",
+	"themes",
 	"lualine",
 	"neo-tree",
-	"fzf-lua",
 	"treesitter",
 	"formatting",
 	"completion",
@@ -15,7 +16,6 @@ local plugin_files = {
 	"multicursors",
 	"smart-splits",
 	"_misc",
-	"themes",
 }
 
 for _, file in ipairs(plugin_files) do
