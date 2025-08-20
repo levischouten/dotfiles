@@ -48,13 +48,47 @@ return {
 				end,
 				desc = "Explorer Sidebar",
 			},
-			-- Popup
+			-- Smart toggle: focus left sidebar if open, close if floating, otherwise open floating
 			{
 				"<leader>e",
 				function()
+					local manager = require("neo-tree.sources.manager")
+					local state = manager.get_state("filesystem")
+					local current_win = vim.api.nvim_get_current_win()
+
+					-- Check if left sidebar is open
+					if state.winid and vim.api.nvim_win_is_valid(state.winid) then
+						local win_config = vim.api.nvim_win_get_config(state.winid)
+						if win_config.relative == "" then
+							-- Left sidebar is open
+							if current_win == state.winid then
+								-- We're already in the sidebar, go back to previous window
+								vim.cmd("wincmd p")
+							else
+								-- Focus the sidebar
+								vim.api.nvim_set_current_win(state.winid)
+							end
+							return
+						end
+					end
+
+					-- Check if we're currently in a floating Neotree window
+					local current_buf = vim.api.nvim_win_get_buf(current_win)
+					local buf_name = vim.api.nvim_buf_get_name(current_buf)
+
+					if string.match(buf_name, "neo%-tree") then
+						local win_config = vim.api.nvim_win_get_config(current_win)
+						if win_config.relative ~= "" then
+							-- We're in a floating Neotree, close it
+							vim.cmd("Neotree close")
+							return
+						end
+					end
+
+					-- No sidebar open and not in floating, open floating window
 					vim.cmd("Neotree toggle float reveal")
 				end,
-				desc = "Explorer Popup",
+				desc = "Explorer Smart Toggle",
 			},
 		},
 	},

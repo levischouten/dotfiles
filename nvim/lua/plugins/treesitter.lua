@@ -18,6 +18,7 @@ return {
 					"yaml",
 					"toml",
 					"markdown",
+					"markdown_inline",
 					"c",
 					"cpp",
 					"cmake",
