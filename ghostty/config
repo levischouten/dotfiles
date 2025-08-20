@@ -1,4 +1,5 @@
-# theme = OneHalfDark
+theme = OneHalfDark
+# theme = dark:OneHalfDark,light:OneHalfLight
 
 font-family = Berkeley Mono
 font-size = 13

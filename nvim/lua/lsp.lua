@@ -25,8 +25,11 @@ local on_attach = function(_, bufnr)
 	end)
 
 	-- Diagnostics pickers (fzf-lua)
-	map("n", "<leader>d", function()
+	map("n", "<leader>D", function()
 		require("fzf-lua").diagnostics_document()
+	end)
+	map("n", "<leader>d", function()
+		vim.diagnostic.open_float(nil, { focus = false, border = "rounded" })
 	end)
 
 	require("fzf-lua").register_ui_select()
