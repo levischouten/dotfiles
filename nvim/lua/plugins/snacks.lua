@@ -40,6 +40,13 @@ return {
 			lazygit = {
 				enabled = true,
 			},
+			picker = {
+				enabled = true,
+				input = {
+					mode = "default",
+					quit_on_leave = true,
+				},
+			},
 		},
 	},
 }

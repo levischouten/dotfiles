@@ -32,11 +32,3 @@ end
 end
 
 _fnm_autoload_hook
-
-set -eg FZF_DEFAULT_OPTS
-set -eU FZF_DEFAULT_OPTS
-set -Ux FZF_DEFAULT_OPTS "\
---color=bg:-1,bg+:0,fg:15,fg+:15 \
---color=hl:4,hl+:1,info:13,prompt:13,spinner:5,marker:4,pointer:3,header:1 \
---color=border:8,label:15,selected-bg:8 \
---border=rounded"

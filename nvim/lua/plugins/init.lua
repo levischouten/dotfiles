@@ -2,10 +2,6 @@ local plugins = {}
 
 -- Load all plugin files
 local plugin_files = {
-	"fzf-lua",
-	"themes",
-	"markdown",
-	"lualine",
 	"neo-tree",
 	"treesitter",
 	"formatting",
@@ -14,8 +10,11 @@ local plugin_files = {
 	"snacks",
 	"nvim-ufo",
 	"context",
+	"markdown",
 	"multicursors",
 	"smart-splits",
+	"themes",
+	"lualine",
 	"_misc",
 }
 

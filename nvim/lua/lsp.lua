@@ -14,25 +14,24 @@ local on_attach = function(_, bufnr)
 		vim.keymap.set(mode, lhs, rhs, { buffer = bufnr })
 	end
 	map("n", "gd", vim.lsp.buf.definition)
-	map("n", "gr", "<cmd>lua require('fzf-lua').lsp_references()<CR>")
+	map("n", "gr", function()
+		require("snacks.picker").lsp_references()
+	end)
 	map("n", "K", function()
 		vim.lsp.buf.hover({ border = "rounded" })
 	end)
 	map("n", "<leader>r", vim.lsp.buf.rename)
 
 	map("n", "<leader>c", function()
-		require("fzf-lua").lsp_code_actions()
+		require("snacks.picker").code_actions()
 	end)
 
-	-- Diagnostics pickers (fzf-lua)
 	map("n", "<leader>D", function()
-		require("fzf-lua").diagnostics_document()
+		require("snacks.picker").diagnostics()
 	end)
 	map("n", "<leader>d", function()
 		vim.diagnostic.open_float(nil, { focus = false, border = "rounded" })
 	end)
-
-	require("fzf-lua").register_ui_select()
 end
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
