@@ -1,5 +1,5 @@
-# theme = OneHalfDark
-theme = dark:Ghostty Default StyleDark,light:OneHalfLight
+theme = Ghostty Default StyleDark
+# theme = dark:Ghostty Default StyleDark,light:OneHalfLight
 
 font-family = Berkeley Mono
 font-size = 13

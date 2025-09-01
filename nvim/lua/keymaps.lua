@@ -3,13 +3,13 @@ vim.g.mapleader = " "
 local map = vim.keymap.set
 
 -- quick splits
-map("n", "<leader>v", ":vsplit<CRe")
-map("n", "<leader>s", ":split<CR>")
+map({ "n", "v" }, "<leader>v", ":vsplit<CRe")
+map({ "n", "v" }, "<leader>s", ":split<CR>")
 
-map("n", "<leader>w", "<cmd>w<cr>")
-map("n", "<leader>q", "<cmd>q!<cr>")
-map("n", "<leader>Q", "<cmd>qa!<cr>")
-map("n", "<leader>x", "<cmd>wqa!<cr>")
+map({ "n", "v" }, "<leader>w", "<cmd>w<cr>")
+map({ "n", "v" }, "<leader>q", "<cmd>q!<cr>")
+map({ "n", "v" }, "<leader>Q", "<cmd>qa!<cr>")
+map({ "n", "v" }, "<leader>x", "<cmd>wqa!<cr>")
 
 map("n", "<leader>f", function()
 	require("snacks.picker").files()

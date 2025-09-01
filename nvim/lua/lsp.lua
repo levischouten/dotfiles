@@ -9,7 +9,22 @@ vim.diagnostic.config({
 })
 
 -- common on_attach and capabilities
-local on_attach = function(_, bufnr)
+local on_attach = function(client, bufnr)
+	-- Document highlight support
+	if client.supports_method("textDocument/documentHighlight") then
+		local group = vim.api.nvim_create_augroup("LspDocumentHighlight", { clear = false })
+		vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
+			buffer = bufnr,
+			group = group,
+			callback = vim.lsp.buf.document_highlight,
+		})
+		vim.api.nvim_create_autocmd({ "CursorMoved", "CursorMovedI" }, {
+			buffer = bufnr,
+			group = group,
+			callback = vim.lsp.buf.clear_references,
+		})
+	end
+
 	local map = function(mode, lhs, rhs)
 		vim.keymap.set(mode, lhs, rhs, { buffer = bufnr })
 	end
@@ -92,14 +107,14 @@ lspconfig.clangd.setup({
 		c.offsetEncoding = { "utf-16" }
 		return c
 	end)(),
-	cmd = {
-		"clangd",
-		"--background-index",
-		"--clang-tidy",
-		"--completion-style=detailed",
-		"--header-insertion=iwyu",
-		"--fallback-style={BasedOnStyle: LLVM, IndentWidth: 4, TabWidth: 4, UseTab: Never}",
-	},
+	-- cmd = {
+	-- 	"clangd",
+	-- 	"--background-index",
+	-- 	"--clang-tidy",
+	-- 	"--completion-style=detailed",
+	-- 	"--header-insertion=iwyu",
+	-- 	"--fallback-style={BasedOnStyle: LLVM, IndentWidth: 4, TabWidth: 4, UseTab: Never}",
+	-- },
 })
 
 -- CMake files
