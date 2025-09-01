@@ -18,9 +18,8 @@ o.incsearch = false
 o.hlsearch = false
 
 -- Code folding
-o.foldcolumn = "0"
 o.foldlevel = 99
-o.foldlevelstart = 99
+o.foldlevelstart = -1
 o.foldenable = true
 
 -- splits

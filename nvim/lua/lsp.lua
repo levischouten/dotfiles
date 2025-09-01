@@ -11,6 +11,7 @@ vim.diagnostic.config({
 -- common on_attach and capabilities
 local on_attach = function(client, bufnr)
 	-- Document highlight support
+
 	if client.supports_method("textDocument/documentHighlight") then
 		local group = vim.api.nvim_create_augroup("LspDocumentHighlight", { clear = false })
 		vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {

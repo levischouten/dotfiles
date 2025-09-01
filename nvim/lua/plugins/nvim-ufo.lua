@@ -11,5 +11,13 @@ return {
 				return { "treesitter", "indent" }
 			end,
 		},
+		config = function(_, opts)
+			local ufo = require("ufo")
+			ufo.setup(opts)
+
+			-- Fix for foldlevel issues with zM/zR
+			vim.keymap.set("n", "zR", ufo.openAllFolds)
+			vim.keymap.set("n", "zM", ufo.closeAllFolds)
+		end,
 	},
 }
