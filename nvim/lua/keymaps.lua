@@ -3,7 +3,7 @@ vim.g.mapleader = " "
 local map = vim.keymap.set
 
 -- quick splits
-map({ "n", "v" }, "<leader>v", ":vsplit<CRe")
+map({ "n", "v" }, "<leader>v", ":vsplit<CR>")
 map({ "n", "v" }, "<leader>s", ":split<CR>")
 
 map({ "n", "v" }, "<leader>w", "<cmd>w<cr>")

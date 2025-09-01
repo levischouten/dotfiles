@@ -28,6 +28,7 @@ local on_attach = function(client, bufnr)
 	local map = function(mode, lhs, rhs)
 		vim.keymap.set(mode, lhs, rhs, { buffer = bufnr })
 	end
+
 	map("n", "gd", vim.lsp.buf.definition)
 	map("n", "gr", function()
 		require("snacks.picker").lsp_references()
