@@ -47,7 +47,7 @@ local on_attach = function(client, bufnr)
 		require("snacks.picker").diagnostics()
 	end)
 	map("n", "<leader>d", function()
-		vim.diagnostic.open_float(nil, { focus = false, border = "rounded" })
+		vim.diagnostic.open_float(nil, { focus = false, border = "dropdown" })
 	end)
 end
 

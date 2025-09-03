@@ -14,8 +14,8 @@ o.shiftwidth = 4
 o.expandtab = true
 o.smartindent = true
 
-o.incsearch = false
-o.hlsearch = false
+o.incsearch = true
+o.hlsearch = true
 
 -- Code folding
 o.foldlevel = 99

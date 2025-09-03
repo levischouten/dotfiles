@@ -46,6 +46,7 @@ return {
 					mode = "default",
 					quit_on_leave = true,
 				},
+				layout = "select",
 			},
 		},
 	},

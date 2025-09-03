@@ -21,7 +21,7 @@ map("n", "<leader>F", function()
 	require("snacks.picker").buffers()
 end, { desc = "Buffers" })
 map("n", "<leader>b", function()
-	require("snacks.picker").lines()
+	require("snacks.picker").lines({ layout = "select" })
 end, { desc = "Grep Current Buffer" })
 
 -- Disable Shift+J from joining lines

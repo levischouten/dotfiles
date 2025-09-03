@@ -4,18 +4,18 @@ Personal configuration files for a modern development environment on macOS.
 
 ## Setup Overview
 
-- **Shell**: Fish with custom configurations and functions
-- **Editor**: Neovim with Lazy.nvim plugin management
-- **Terminal**: Ghostty with custom theming
-- **Multiplexer**: tmux with vim-style keybindings
+- **shell**: fish with custom configurations and functions
+- **editor**: neovim with lazy.nvim plugin management
+- **terminal**: ghostty with custom theming
+- **multiplexer**: tmux with vim-style keybindings
 
 ## Key Tools
 
-| Tool                | Purpose                                 |
-| ------------------- | --------------------------------------- |
-| [fish](fish/)       | Shell with intelligent autocompletion   |
-| [nvim](nvim/)       | Text editor with LSP and modern plugins |
-| [ghostty](ghostty/) | GPU-accelerated terminal emulator       |
+- | Tool                | Purpose                                 |
+  | ------------------- | --------------------------------------- |
+  | [fish](fish/)       | Shell with intelligent autocompletion   |
+  | [nvim](nvim/)       | Text editor with LSP and modern plugins |
+  | [ghostty](ghostty/) | GPU-accelerated terminal emulator       |
 
 ## Installation
 

@@ -5,11 +5,20 @@ return {
 		lazy = false,
 		opts = {
 			window = {
+				position = "float",
+				popup = {
+					size = {
+						height = "80%",
+						width = "80%",
+					},
+					position = "50%",
+				},
 				mappings = {
 					["<C-v>"] = "open_vsplit", -- vertical split
 					["<C-s>"] = "open_split", -- horizontal split
 				},
 			},
+			popup_border_style = "",
 			filesystem = {
 				follow_current_file = { enabled = true },
 				filtered_items = { visible = false, hide_dotfiles = false },
