@@ -39,9 +39,7 @@ local on_attach = function(client, bufnr)
 	end)
 	map("n", "<leader>r", vim.lsp.buf.rename)
 
-	map("n", "<leader>c", function()
-		require("snacks.picker").code_actions()
-	end)
+	map("n", "<leader>c", vim.lsp.buf.code_action)
 
 	map("n", "<leader>D", function()
 		require("snacks.picker").diagnostics()
@@ -71,6 +69,12 @@ lspconfig.pyright.setup({
 
 -- TypeScript / TSX
 lspconfig.ts_ls.setup({
+	on_attach = on_attach,
+	capabilities = capabilities,
+})
+
+-- CSS
+lspconfig.cssls.setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
 })
