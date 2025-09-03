@@ -48,6 +48,15 @@ return {
 				},
 				layout = "select",
 			},
+			indent = {
+				enabled = true,
+				indent = {
+					char = "▏",
+				},
+				scope = {
+					char = "▏",
+				},
+			},
 		},
 	},
 }
