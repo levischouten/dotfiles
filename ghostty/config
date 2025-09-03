@@ -1,4 +1,3 @@
-# theme = Ghostty Default StyleDark
 theme = dark:Ghostty Default StyleDark,light:OneHalfLight
 
 font-family = Berkeley Mono
@@ -14,3 +13,13 @@ macos-titlebar-proxy-icon = hidden
 
 cursor-text = #24273A
 # custom-shader = "./shaders/cursor_smear.glsl"
+
+keybind = performable:ctrl+h=goto_split:left
+keybind = performable:ctrl+j=goto_split:down
+keybind = performable:ctrl+k=goto_split:up
+keybind = performable:ctrl+l=goto_split:right
+
+keybind = performable:alt+h=resize_split:left,20
+keybind = performable:alt+j=resize_split:down,20
+keybind = performable:alt+k=resize_split:up,20
+keybind = performable:alt+l=resize_split:right,20

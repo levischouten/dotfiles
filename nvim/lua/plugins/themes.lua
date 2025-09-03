@@ -1,7 +1,7 @@
 return {
 	{
-		dir = "~/Developer/private/otherhalf",
-		name = "otherhalf",
+		-- dir = "~/Developer/private/otherhalf",
+		"levischouten/otherhalf",
 		priority = 1000,
 		lazy = false,
 		config = function()
@@ -9,10 +9,6 @@ return {
 				transparent = true,
 				variant = "auto",
 			})
-
-			-- MultiCursor
-			vim.api.nvim_set_hl(0, "MultiCursor", { link = "Visual" })
-			vim.api.nvim_set_hl(0, "MultiCursorMain", { link = "Visual" })
 
 			vim.cmd.colorscheme("otherhalf")
 		end,

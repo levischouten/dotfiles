@@ -11,12 +11,11 @@ Personal configuration files for a modern development environment on macOS.
 
 ## Key Tools
 
-| Tool                | Purpose                                     |
-| ------------------- | ------------------------------------------- |
-| [fish](fish/)       | Shell with intelligent autocompletion       |
-| [nvim](nvim/)       | Text editor with LSP and modern plugins     |
-| [tmux](tmux/)       | Terminal multiplexer with custom status bar |
-| [ghostty](ghostty/) | GPU-accelerated terminal emulator           |
+| Tool                | Purpose                                 |
+| ------------------- | --------------------------------------- |
+| [fish](fish/)       | Shell with intelligent autocompletion   |
+| [nvim](nvim/)       | Text editor with LSP and modern plugins |
+| [ghostty](ghostty/) | GPU-accelerated terminal emulator       |
 
 ## Installation
 
